@@ -1,0 +1,360 @@
+/* View Transition API styles - improved with cooler animations */
+::view-transition-old(root) {
+  animation: 600ms cubic-bezier(0.65, 0, 0.35, 1) both fade-out-scale;
+}
+
+::view-transition-new(root) {
+  animation: 600ms cubic-bezier(0.22, 1, 0.36, 1) both fade-in-scale;
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes fade-out-scale {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(8px);
+  }
+}
+
+/* Page transition state */
+.page-transition {
+  pointer-events: none;
+}
+
+/* Specific element transitions */
+.header-wrapper h1 {
+  view-transition-name: page-title;
+}
+
+::view-transition-old(page-title),
+::view-transition-new(page-title) {
+  animation-duration: 800ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.story-wrapper {
+  view-transition-name: content-wrapper;
+}
+
+::view-transition-old(content-wrapper),
+::view-transition-new(content-wrapper) {
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Add transitions for form elements */
+#login-form-container {
+  view-transition-name: login-form-container;
+}
+
+#register-form-container {
+  view-transition-name: register-form-container;
+}
+
+::view-transition-old(login-form-container),
+::view-transition-old(register-form-container) {
+  animation: 700ms cubic-bezier(0.22, 1, 0.36, 1) both slide-rotate-out;
+}
+
+::view-transition-new(login-form-container),
+::view-transition-new(register-form-container) {
+  animation: 700ms cubic-bezier(0.22, 1, 0.36, 1) both slide-rotate-in;
+}
+
+@keyframes slide-rotate-out {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  to {
+    transform: translateY(50px) rotate(-3deg);
+    opacity: 0;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes slide-rotate-in {
+  from {
+    transform: translateY(-50px) rotate(3deg);
+    opacity: 0;
+    filter: brightness(1.2);
+  }
+  to {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* Add transitions for detail page */
+.detail-card {
+  view-transition-name: detail-card;
+}
+
+::view-transition-old(detail-card) {
+  animation: 700ms cubic-bezier(0.22, 1, 0.36, 1) both zoom-out-3d;
+}
+
+::view-transition-new(detail-card) {
+  animation: 700ms cubic-bezier(0.22, 1, 0.36, 1) both zoom-in-3d;
+}
+
+@keyframes zoom-out-3d {
+  from {
+    transform: perspective(1200px) scale(1) rotateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    transform: perspective(1200px) scale(0.8) rotateX(-5deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+@keyframes zoom-in-3d {
+  from {
+    transform: perspective(1200px) scale(1.2) rotateX(5deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    transform: perspective(1200px) scale(1) rotateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Add transitions for about page */
+.about-card {
+  view-transition-name: about-card;
+}
+
+::view-transition-old(about-card) {
+  animation: 800ms cubic-bezier(0.22, 1, 0.36, 1) both flip-out;
+}
+
+::view-transition-new(about-card) {
+  animation: 800ms cubic-bezier(0.22, 1, 0.36, 1) both flip-in;
+}
+
+@keyframes flip-out {
+  from {
+    transform: perspective(1200px) rotateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: perspective(1200px) rotateY(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flip-in {
+  from {
+    transform: perspective(1200px) rotateY(15deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(1200px) rotateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add transitions for map */
+#map {
+  view-transition-name: map-container;
+}
+
+::view-transition-old(map-container) {
+  animation: 800ms cubic-bezier(0.22, 1, 0.36, 1) both slide-away-left;
+}
+
+::view-transition-new(map-container) {
+  animation: 800ms cubic-bezier(0.22, 1, 0.36, 1) both slide-in-right;
+}
+
+@keyframes slide-away-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Add transitions for navigation */
+.navigation-drawer {
+  view-transition-name: navigation;
+}
+
+::view-transition-old(navigation) {
+  animation: 500ms cubic-bezier(0.22, 1, 0.36, 1) both fade-slide-up;
+}
+
+::view-transition-new(navigation) {
+  animation: 500ms cubic-bezier(0.22, 1, 0.36, 1) both fade-slide-down;
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fade-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pastikan setiap elemen memiliki view-transition-name yang unik */
+#login-submit-button {
+  view-transition-name: login-submit-button;
+}
+
+#register-submit-button {
+  view-transition-name: register-submit-button;
+}
+
+#to-login-link {
+  view-transition-name: to-login-link;
+}
+
+#to-register-link {
+  view-transition-name: to-register-link;
+}
+
+/* Transisi untuk tombol submit */
+::view-transition-old(login-submit-button),
+::view-transition-old(register-submit-button) {
+  animation: 600ms cubic-bezier(0.22, 1, 0.36, 1) both button-exit;
+}
+
+::view-transition-new(login-submit-button),
+::view-transition-new(register-submit-button) {
+  animation: 600ms cubic-bezier(0.22, 1, 0.36, 1) both button-enter;
+}
+
+@keyframes button-exit {
+  from {
+    transform: scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes button-enter {
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+    filter: brightness(1.5);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* Transisi untuk link navigasi */
+::view-transition-old(to-login-link),
+::view-transition-old(to-register-link) {
+  animation: 500ms cubic-bezier(0.22, 1, 0.36, 1) both link-fade-out;
+}
+
+::view-transition-new(to-login-link),
+::view-transition-new(to-register-link) {
+  animation: 500ms cubic-bezier(0.22, 1, 0.36, 1) both link-fade-in;
+}
+
+@keyframes link-fade-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes link-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aturan umum untuk transisi halaman */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.6s;
+}
+
+/* Tambahkan efek backdrop filter saat transisi */
+::view-transition-group(root) {
+  backdrop-filter: blur(0);
+  animation: backdrop-blur 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes backdrop-blur {
+  0% {
+    backdrop-filter: blur(0);
+  }
+  50% {
+    backdrop-filter: blur(4px);
+  }
+  100% {
+    backdrop-filter: blur(0);
+  }
+}

@@ -1,0 +1,284 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #f4f6f7;
+  --accent-color: #3498db;
+  --text-color: #2c3e50;
+  --border-color: #e0e6ed;
+  --background-gradient: linear-gradient(135deg, #f5f7fa 0%, #e6e9f0 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--background-gradient);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+main#main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.add-story-section {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-story-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(52, 152, 219, 0.05),
+    rgba(52, 152, 219, 0.02)
+  );
+  transform: rotate(-45deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.add-story-section:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 35px 60px rgba(0, 0, 0, 0.15),
+    0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.form-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent-color), #2980b9);
+  border-radius: 2px;
+}
+
+.add-story-form {
+  display: grid;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.form-input {
+  padding: 12px 15px;
+  font-size: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-input:hover {
+  border-color: var(--accent-color);
+}
+
+.form-button {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(to right, var(--accent-color), #2980b9);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.3s ease;
+}
+
+.form-button:hover::before {
+  left: 100%;
+}
+
+.form-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.form-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.form-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.form-link:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+.camera-container {
+  display: none; /* Sembunyikan kamera secara default */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.camera-container video,
+.camera-container canvas {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.camera-container canvas {
+  display: none; /* Initially hide the canvas */
+}
+
+.story-photo.photo-input {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+/* Photo Options Styling */
+.photo-options {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.photo-options .form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.photo-options .form-button:hover {
+  background-color: #0056b3;
+}
+
+.photo-options .form-button svg {
+  width: 48px; /* Ukuran ikon kamera */
+  height: 48px;
+  fill: #ffffff; /* Warna ikon kamera */
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+/* Loading button state */
+.form-button:disabled {
+  background: linear-gradient(to right, #7f8c8d, #95a5a6);
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: none;
+  transform: none;
+}
+
+.form-button:disabled::before {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .add-story-section {
+    margin: 20px;
+    padding: 25px;
+    max-width: calc(100% - 40px);
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+}

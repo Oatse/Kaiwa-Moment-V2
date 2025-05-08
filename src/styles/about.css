@@ -1,0 +1,181 @@
+.container.about-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 100vh;
+  gap: 30px;
+}
+
+.about-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin: 10px 0;
+  color: #fafafa;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.about-card {
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.08);
+  padding: 50px 40px;
+  max-width: 650px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tambahan efek gradient pada card */
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(108, 99, 255, 0.1),
+    rgba(108, 99, 255, 0.03)
+  );
+  transform: rotate(-45deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-card:hover {
+  transform: translateY(-15px) scale(1.02); /* Efek hover lebih dinamis */
+  box-shadow:
+    0 30px 50px rgba(0, 0, 0, 0.15),
+    0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 30px;
+  border: 6px solid #ff5722;
+  box-shadow:
+    0 10px 25px rgba(108, 99, 255, 0.3),
+    0 5px 15px rgba(108, 99, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.about-photo:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+.about-details {
+  text-align: center;
+  color: #2c3e50;
+  position: relative;
+  z-index: 2;
+}
+
+.about-name {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #1a2238;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #ff5722, #4a47ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-info {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.about-info strong {
+  color: #ff5722;
+  font-weight: 700;
+}
+
+.about-caption {
+  font-style: italic;
+  color: #2c3e50;
+  margin: 20px 0;
+  font-size: 1rem;
+  position: relative;
+  padding: 0 30px;
+}
+
+.about-caption::before,
+.about-caption::after {
+  content: '"';
+  color: #6c63ff;
+  font-size: 2.5rem;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.about-caption::before {
+  left: 0;
+  top: -10px;
+}
+
+.about-caption::after {
+  right: 0;
+  bottom: -20px;
+}
+
+.divider {
+  width: 70%;
+  border: none;
+  border-bottom: 3px solid #ff5722;
+  margin: 30px auto;
+  opacity: 0.5;
+  transition: width 0.3s ease;
+}
+
+.about-card:hover .divider {
+  width: 100%;
+  opacity: 0.8;
+}
+
+.about-bio {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2c3e50;
+  padding: 0 20px;
+  text-align: justify;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-card {
+    max-width: 95%;
+    padding: 30px 20px;
+  }
+
+  .about-photo {
+    width: 200px;
+    height: 200px;
+  }
+}

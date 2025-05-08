@@ -1,0 +1,1309 @@
+:root {
+  --primary-color: #2e2e2e;
+  --secondary-color: #ffffff;
+  --accent-color: #ff5722;
+  --background-color: #f5f5f5;
+}
+
+/* Global Styling */
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+li {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #fafafa;
+}
+
+h2 {
+  color: #1f1f1f;
+}
+
+p {
+  color: #1f1f1f;
+  margin-top: 18px;
+}
+
+button,
+input,
+textarea {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+a {
+  color: #1f1f1f;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1f1f1f;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px; /* Konsisten padding horizontal */
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1001px) {
+  .container {
+    padding: 0 25px; /* Konsisten padding horizontal */
+  }
+  .sidebar-header {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 0 20px; /* Konsisten padding horizontal */
+  }
+  .sidebar-header {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-header {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 12px; /* Konsisten padding horizontal */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  padding-inline: 32px;
+  margin-inline: auto;
+  max-width: 1440px;
+}
+
+/* Auth buttons styling */
+.auth-button {
+  background-color: var(--accent-color);
+  color: #1f1f1f;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 28px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+  border-color: #3498db;
+  background-color: transparent;
+}
+
+.auth-button.signup {
+  background-color: #3498db;
+  color: #f0f0f0;
+  border: 1px solid #3498db;
+}
+
+.auth-button.signup:hover {
+  background-color: #0099ff;
+  border-color: #0099ff;
+}
+
+/* Desktop navigation styling */
+@media screen and (min-width: 1001px) {
+  /* Hide hamburger button */
+  .hamburger-button {
+    display: none !important;
+  }
+
+  /* Hide sidebar login, register, and logout items */
+  #sidebar-login-item,
+  #sidebar-register-item,
+  #sidebar-logout-item,
+  #sidebar-logout-link {
+    display: none !important;
+  }
+
+  .sidebar-login-item,
+  .sidebar-register-item,
+  .sidebar-logout-item {
+    display: none !important;
+  }
+
+  /* Show navigation drawer */
+  .navigation-drawer {
+    display: flex !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    transform: none !important;
+    justify-content: center !important;
+  }
+
+  .nav-list {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 30px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-list li {
+    width: auto !important;
+  }
+
+  .nav-list li a {
+    font-size: 1rem !important;
+    padding: 5px 10px !important;
+    display: inline-block !important;
+  }
+
+  /* Hide icons in desktop view */
+  .nav-list li a i {
+    display: none !important;
+  }
+}
+
+/* Mobile navigation styling */
+@media screen and (max-width: 1000px) {
+  /* Show hamburger button */
+  .hamburger-button {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Hide navigation drawer by default */
+  .navigation-drawer {
+    display: none;
+  }
+
+  /* Show navigation drawer when active */
+  .navigation-drawer.active {
+    display: flex;
+  }
+
+  /* Show icons in mobile view */
+  .nav-list li a i {
+    display: inline-block !important;
+    margin-right: 8px !important;
+  }
+}
+
+/* Responsivitas untuk perangkat kecil */
+@media screen and (max-width: 768px) {
+  .container {
+    padding-inline: 16px; /* Kurangi padding untuk perangkat kecil */
+  }
+
+  .navigation-drawer {
+    width: 100%; /* Buat navigation drawer memenuhi lebar layar */
+    transform: none; /* Hapus transformasi yang mungkin menyebabkan masalah */
+  }
+
+  .navigation-drawer.active {
+    display: flex; /* Pastikan drawer ditampilkan saat active */
+  }
+
+  .nav-list {
+    flex-direction: column; /* Ubah menjadi kolom untuk perangkat kecil */
+    gap: 10px;
+  }
+  .auth-button {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* MAIN */
+.main-content {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr; /* Satu kolom untuk perangkat kecil */
+  }
+}
+
+.skip-to-content {
+  position: fixed; /* Changed from absolute to fixed */
+  top: -40px;
+  left: 0;
+  background: #3498db; /* Blue background */
+  color: #fff;
+  padding: 10px 15px;
+  z-index: 1000;
+  text-decoration: none;
+  transition: top 0.3s ease;
+  font-weight: bold;
+  border-radius: 0 0 5px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skip-to-content:focus,
+.skip-to-content:hover {
+  top: 0;
+}
+
+.skip-to-content:hover {
+  background: #2980b9; /* Darker blue on hover */
+}
+
+/* Button Styling */
+button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+/* Link Hover Effect */
+a {
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Story List Styling */
+.story-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 card per row */
+  gap: 20px;
+}
+
+.story-item {
+  background-color: var(--secondary-color);
+  max-width: 300px; /* Fixed width */
+  max-height: 450px;
+  min-width: 262px;
+  min-height: 360px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Pastikan konten diatur secara vertikal */
+  justify-content: space-between; /* Sebarkan konten secara merata */
+  min-height: 300px; /* Tetapkan tinggi minimum */
+}
+
+.story-item img {
+  width: 100%;
+  height: 250px; /* Tetapkan tinggi tetap untuk gambar */
+  object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.story-item h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.story-item p {
+  display: -webkit-box; /* Gunakan box model untuk teks */
+  line-clamp: 2; /* Batasi hanya 2 baris */
+  -webkit-box-orient: vertical; /* Orientasi vertikal */
+  overflow: hidden; /* Sembunyikan teks yang melebihi batas */
+  text-overflow: ellipsis; /* Tambahkan "..." di akhir teks */
+  font-size: 0.9rem; /* Ukuran font */
+  color: #666; /* Warna teks */
+  line-height: 1.4; /* Jarak antar baris */
+  margin-bottom: 10px; /* Jarak bawah */
+}
+
+.story-item small {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.story-wrapper {
+  background-color: var(--secondary-color);
+  border-radius: 1px solid #3498db;
+  border-radius: 12px;
+  position: center;
+  padding: 24px 38px; /* Tetapkan jarak padding yang sama di semua sisi */
+  margin: 0 auto; /* Jarak dari tepi layar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1440px;
+  /*ubah warna border jadi biru*/
+}
+
+/* Efek hover pada card */
+.story-item:hover {
+  transform: scale(1.05); /* Perbesar sedikit saat hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+  cursor: pointer;
+  z-index: 2;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Nonaktifkan hover pada card yang sedang dalam mode fokus */
+.story-item.focused:hover {
+  transform: none; /* Nonaktifkan transformasi hover */
+  box-shadow: none; /* Nonaktifkan bayangan hover */
+  cursor: default; /* Ubah kursor menjadi default */
+}
+
+/* Nonaktifkan transisi hover saat elemen dalam mode fokus */
+.story-item.focused {
+  transition: none; /* Hilangkan transisi untuk elemen fokus */
+}
+
+/* Pastikan link detail tetap dapat diklik */
+.story-item .detail-link {
+  position: relative;
+  color: var(--accent-color);
+  z-index: 10; /* Nilai z-index lebih tinggi */
+  pointer-events: auto; /* Pastikan pointer events aktif */
+  line-height: 0.8;
+  font-size: 0.9rem;
+  padding: 10px 10px 0px 156px;
+  border-top: 1px solid #ddd;
+}
+
+/* Nonaktifkan semua efek hover pada elemen dengan kelas .focused */
+.story-item.focused:hover,
+.story-item.focused {
+  transform: translate(-50%, -50%) scale(1.8);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.4);
+  cursor: default; /* Ubah kursor menjadi default */
+  z-index: 1000; /* Pastikan tetap di atas elemen lain */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  pointer-events: auto; /* Aktifkan interaksi dengan card */
+  filter: none !important; /* Hapus filter apa pun */
+  opacity: 1 !important; /* Pastikan opasitas penuh */
+}
+
+/* Pastikan konten dalam card fokus tetap jelas */
+.story-item.focused * {
+  opacity: 1 !important;
+  filter: none !important;
+  color: initial !important; /* Kembalikan warna teks ke default */
+}
+
+/* Pastikan gambar dalam card fokus tetap jelas */
+.story-item.focused img {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Overlay untuk latar belakang redup */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9000;
+  display: none;
+  pointer-events: auto;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Card yang diperbesar */
+.story-item.focused {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1.2) !important;
+  z-index: 9999 !important;
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.4) !important;
+  background-color: #ffffff !important;
+  width: 300px !important;
+  height: auto !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  pointer-events: auto !important;
+  filter: none !important; /* Ensure no filter is applied */
+  opacity: 1 !important;
+  overflow: auto !important;
+  max-height: 80vh !important;
+  transition: none !important;
+}
+
+/* Separate blur effect for the background */
+body.overlay-active .story-wrapper {
+  filter: blur(3px);
+}
+
+/* Ensure the focused item is never blurred */
+.story-item.focused {
+  filter: none !important;
+}
+
+/* Ensure all content inside focused item is clear */
+.story-item.focused * {
+  filter: none !important;
+}
+
+/* Hapus duplikasi style yang mungkin menyebabkan konflik */
+.story-item.focused:hover {
+  transform: translate(-50%, -50%) scale(1.8) !important;
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.4) !important;
+  cursor: default !important;
+}
+
+/* Nonaktifkan semua efek hover pada elemen dengan kelas .focused */
+.story-item.focused:hover,
+.story-item.focused {
+  transform: translate(-50%, -50%) scale(1.8);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.4);
+  cursor: default; /* Ubah kursor menjadi default */
+  z-index: 1000; /* Pastikan tetap di atas elemen lain */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  pointer-events: auto; /* Aktifkan interaksi dengan card */
+  filter: none !important; /* Hapus filter apa pun */
+  opacity: 1 !important; /* Pastikan opasitas penuh */
+}
+
+/* Pastikan konten dalam card fokus tetap jelas */
+.story-item.focused * {
+  opacity: 1 !important;
+  filter: none !important;
+  color: initial !important; /* Kembalikan warna teks ke default */
+}
+
+/* Pastikan gambar dalam card fokus tetap jelas */
+.story-item.focused img {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Media query untuk layar kecil */
+@media screen and (max-width: 768px) {
+  .story-item.focused {
+    transform: translate(-50%, -50%) scale(1.3) !important;
+    width: 85% !important;
+    max-width: 300px !important;
+  }
+}
+
+/* Media query untuk layar sangat kecil */
+@media screen and (max-width: 480px) {
+  .story-item.focused {
+    transform: translate(-50%, -50%) scale(1.1) !important;
+    width: 90% !important;
+    padding: 15px !important;
+  }
+}
+
+.popup-content {
+  width: 250px; /* Tetapkan lebar tetap */
+  height: 200px; /* Tetapkan tinggi tetap */
+  overflow: hidden; /* Sembunyikan konten yang melebihi batas */
+  text-align: center; /* Pusatkan teks */
+}
+
+.popup-content img {
+  width: 100%;
+  height: 100px; /* Tetapkan tinggi tetap untuk gambar */
+  object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.popup-content h3 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.popup-content p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 5px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Batasi hanya 2 baris */
+  line-clamp: 2; /* Standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Tambahkan "..." di akhir teks */
+}
+
+.popup-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* Batasi hanya 3 baris */
+  -webkit-box-orient: vertical;
+  overflow: hidden; /* Sembunyikan teks yang melebihi batas */
+  text-overflow: ellipsis; /* Tambahkan "..." di akhir teks */
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #3498db;
+}
+
+@media screen and (max-width: 768px) {
+  #map {
+    height: 300px; /* Kurangi tinggi peta untuk perangkat kecil */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #map {
+    height: 200px; /* Kurangi tinggi peta untuk perangkat sangat kecil */
+  }
+}
+
+.header-wrapper {
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between; /* Pisahkan tulisan dan tombol */
+  align-items: center; /* Sejajarkan secara vertikal */
+  margin-bottom: 20px; /* Tambahkan jarak ke bawah */
+}
+
+.add-story-button {
+  background-color: rgb(51, 101, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+}
+
+.add-story-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.add-story-button:hover {
+  background-color: #ffffff00;
+  border: #ffffff 2px solid;
+}
+
+.add-story-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsivitas untuk perangkat kecil */
+@media screen and (max-width: 768px) {
+  .container {
+    padding-inline: 16px; /* Kurangi padding untuk perangkat kecil */
+  }
+
+  .navigation-drawer {
+    width: 100%; /* Buat navigation drawer memenuhi lebar layar */
+    transform: translateY(-100%);
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    z-index: 9999;
+  }
+
+  .navigation-drawer.open {
+    transform: translateY(0); /* Tampilkan drawer saat terbuka */
+  }
+
+  .nav-list {
+    flex-direction: column; /* Ubah menjadi kolom untuk perangkat kecil */
+    gap: 10px;
+  }
+
+  .story-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 card per row */
+    gap: 10px; /* Kurangi jarak antar card */
+  }
+
+  .story-item {
+    max-width: 100%; /* Buat card memenuhi lebar container */
+    height: auto; /* Sesuaikan tinggi card */
+  }
+
+  #map {
+    height: 300px; /* Kurangi tinggi peta untuk perangkat kecil */
+  }
+
+  .add-story-button {
+    padding: 8px 12px; /* Kurangi padding tombol */
+    font-size: 0.9rem; /* Kurangi ukuran font tombol */
+  }
+}
+
+/* Notification styling */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50; /* Warna hijau untuk notifikasi sukses */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notification.error {
+  background-color: #f44336; /* Warna merah untuk notifikasi error */
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.notification.error::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 768px) {
+  .notification {
+    top: auto;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+footer p {
+  color: #1f1f1f;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
+
+/* Perbaikan untuk konsistensi di berbagai perangkat */
+html {
+  -webkit-text-size-adjust: 100%; /* Mencegah font scaling otomatis di iOS */
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation; /* Perbaikan untuk touch events */
+}
+
+/* Perbaikan untuk input fields di mobile */
+input,
+textarea,
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-size: 16px; /* Mencegah zoom otomatis di iOS */
+}
+
+/* Perbaikan untuk hamburger menu di mobile */
+.hamburger-button {
+  -webkit-tap-highlight-color: transparent; /* Menghilangkan highlight saat tap di mobile */
+  display: none; /* Hidden by default on all screens */
+}
+
+/* Show hamburger ONLY on screens 768px and below */
+@media screen and (max-width: 768px) {
+  .hamburger-button {
+    display: flex;
+  }
+
+  .navigation-drawer {
+    width: 100%; /* Buat navigation drawer memenuhi lebar layar */
+    transform: translateY(-100%);
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    z-index: 9999;
+  }
+
+  .navigation-drawer.open {
+    transform: translateY(0); /* Tampilkan drawer saat terbuka */
+  }
+
+  .nav-list {
+    flex-direction: column; /* Ubah menjadi kolom untuk perangkat kecil */
+    gap: 10px;
+  }
+}
+
+/* Perbaikan untuk navigation drawer di mobile */
+.navigation-drawer {
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling di iOS */
+}
+
+/* Media query untuk perangkat mobile yang sebenarnya */
+@media only screen and (max-width: 767px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  .navigation-drawer {
+    width: 100%;
+    height: 100vh;
+    height: calc(
+      var(--vh, 1vh) * 100
+    ); /* Perbaikan untuk viewport height di mobile */
+  }
+
+  .story-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Media query khusus untuk perangkat dengan layar sangat kecil */
+@media only screen and (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header-wrapper h1 {
+    font-size: 1.5rem;
+  }
+
+  .add-story-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Perbaikan untuk orientasi landscape di mobile */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .navigation-drawer {
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .nav-list {
+    gap: 10px;
+  }
+
+  .nav-list li a {
+    padding: 8px 0;
+    font-size: 16px;
+  }
+
+  .mobile-user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-user-name {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .mobile-logout-button,
+  .mobile-login-button,
+  .mobile-signup-button {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+}
+
+/* Reset dan standardisasi untuk hamburger button */
+.hamburger-button {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: content-box !important;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hamburger-button * {
+  box-sizing: content-box !important;
+}
+
+/* Efek hover yang lebih bagus untuk hamburger button */
+.hamburger-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efek active saat diklik */
+.hamburger-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Efek hover untuk garis hamburger */
+.hamburger-button:hover .hamburger-line {
+  background-color: #0099ff;
+}
+
+/* Animasi garis hamburger saat hover */
+.hamburger-button:hover .hamburger-line:nth-child(1) {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.hamburger-button:hover .hamburger-line:nth-child(3) {
+  width: 20px;
+}
+
+/* Pastikan ukuran hamburger konsisten di semua ukuran layar */
+@media screen and (max-width: 768px) {
+  .hamburger-button {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+  }
+
+  .hamburger-line {
+    height: 3px !important;
+    width: 30px !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+
+  .hamburger-line:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Animasi garis hamburger saat hover */
+  .hamburger-button:hover .hamburger-line:nth-child(1) {
+    width: 20px !important;
+    margin-left: 10px !important;
+  }
+
+  .hamburger-button:hover .hamburger-line:nth-child(3) {
+    width: 20px !important;
+  }
+}
+
+/* Pastikan navigation drawer tampil dengan benar saat aktif */
+.navigation-drawer.active {
+  display: flex !important;
+}
+
+/* Pastikan navigation drawer berada di atas elemen lain */
+@media screen and (max-width: 1000px) {
+  .navigation-drawer {
+    position: absolute !important;
+    z-index: 9999 !important;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    z-index: 9998 !important;
+  }
+}
+
+/* Pastikan hamburger button berfungsi dengan benar */
+.hamburger-button {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: content-box !important;
+}
+
+.hamburger-button * {
+  box-sizing: content-box !important;
+}
+
+/* Perbaikan untuk navigation drawer */
+.navigation-drawer {
+  display: none;
+}
+
+.navigation-drawer.active {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 280px !important;
+  height: 100vh !important;
+  background-color: white !important;
+  z-index: 10000 !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+}
+
+/* Overlay untuk sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* Modal style for story detail */
+.story-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-modal {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 80%;
+  width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2001;
+}
+
+.story-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.story-modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.story-modal-content h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.story-modal-content p {
+  color: #666;
+}
+
+.story-modal-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* Efek hover pada card tetap seperti semula */
+.story-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 2;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Tombol close untuk card yang difokuskan */
+.focus-close-button {
+  display: none !important;
+}
+
+/* Remove the focus-close-button styles */
+.focus-close-button {
+  display: none !important;
+}
+
+/* Transisi halaman yang lebih halus */
+.page-transitioning {
+  pointer-events: none;
+}
+
+/* Tambahkan efek blur saat transisi halaman */
+.page-transition * {
+  animation: subtle-blur 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes subtle-blur {
+  0% {
+    filter: blur(0);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
+
+/* Perbaikan untuk transisi pada story-item */
+.story-item {
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, box-shadow;
+}
+
+/* Perbaikan untuk transisi pada tombol */
+button {
+  transition:
+    background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, background-color, box-shadow;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Perbaikan untuk transisi pada link */
+a {
+  transition:
+    color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: color, opacity;
+}
+
+/* Tambahkan transisi untuk semua elemen interaktif */
+.story-item,
+button,
+a,
+input,
+textarea,
+select {
+  transition-property:
+    transform, opacity, background-color, color, box-shadow, filter;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Pagination styling - improved */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 15px 0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Fixed width instead of min-width */
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50%; /* Perfect circle */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0; /* Remove padding to prevent stretching */
+  margin: 0; /* Remove margin to prevent stretching */
+  flex-shrink: 0; /* Prevent shrinking */
+  flex-grow: 0; /* Prevent growing */
+}
+
+/* Special styling for prev/next buttons to ensure SVG is centered */
+.pagination-button.prev-button,
+.pagination-button.next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.pagination-button.prev-button svg,
+.pagination-button.next-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.pagination-button:hover:not(.disabled):not(.active) {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.pagination-button.active {
+  background-color: #2e2e2e;
+  color: white;
+  font-weight: 600;
+}
+
+.pagination-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-button.prev-button:hover:not(.disabled),
+.pagination-button.next-button:hover:not(.disabled) {
+  background-color: #e0e0e0;
+}
+
+.pagination-ellipsis {
+  color: #999;
+  font-size: 1.2rem;
+  margin: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; /* Fixed width */
+  text-align: center;
+}
+
+/* Responsive pagination */
+@media screen and (max-width: 768px) {
+  .pagination {
+    padding: 8px 12px;
+  }
+
+  .pagination-button {
+    width: 36px; /* Fixed width */
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .pagination-button.prev-button svg,
+  .pagination-button.next-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pagination {
+    padding: 6px 10px;
+    gap: 4px;
+  }
+
+  .pagination-button {
+    width: 32px; /* Fixed width */
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .pagination-button.prev-button svg,
+  .pagination-button.next-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
+

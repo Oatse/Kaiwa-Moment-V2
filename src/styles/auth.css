@@ -1,0 +1,242 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #f4f6f7;
+  --accent-color: #3498db;
+  --text-color: #2c3e50;
+  --border-color: #e0e6ed;
+  --background-gradient: linear-gradient(135deg, #f5f7fa 0%, #e6e9f0 100%);
+}
+
+/* Styles for login and register pages */
+.login-section,
+.register-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(52, 152, 219, 0.05),
+    rgba(52, 152, 219, 0.02)
+  );
+  transform: rotate(-45deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.form-container:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 35px 60px rgba(0, 0, 0, 0.15),
+    0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.form-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent-color), #2980b9);
+  border-radius: 2px;
+}
+
+#login-form,
+#register-form {
+  display: grid;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.form-input {
+  padding: 12px 15px;
+  font-size: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-input:hover {
+  border-color: var(--accent-color);
+}
+
+.form-button {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(to right, var(--accent-color), #2980b9);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.form-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.form-button:active {
+  transform: translateY(0);
+}
+
+.form-button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.form-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.form-link:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Tambahkan efek ripple pada tombol */
+.form-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.form-button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* Tambahkan style untuk error message */
+.error-message {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-left: 4px solid #d32f2f;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  .form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+

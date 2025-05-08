@@ -1,0 +1,280 @@
+/* Styles untuk navigation drawer */
+.navigation-drawer {
+  display: none;
+}
+
+.navigation-drawer.active {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 280px !important;
+  height: 100vh !important;
+  background-color: #ffffff !important;
+  z-index: 99999 !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+  overflow-y: auto !important;
+  padding: 0px !important;
+  transform: none !important;
+  transition: none !important;
+  border-radius: 0 12px 12px 0;
+}
+
+/* Overlay untuk sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99998;
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
+}
+
+/* Hamburger button styles dengan efek hover yang lebih bagus */
+.hamburger-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  padding: 8px;
+  z-index: 100000;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Efek hover yang lebih bagus untuk hamburger button */
+.hamburger-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efek active saat diklik */
+.hamburger-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Efek hover untuk garis hamburger */
+.hamburger-button:hover .hamburger-line {
+  background-color: #0099ff;
+}
+
+/* Animasi garis hamburger saat hover */
+.hamburger-button:hover .hamburger-line:nth-child(1) {
+  width: 70%;
+}
+
+.hamburger-button:hover .hamburger-line:nth-child(2) {
+  width: 100%;
+}
+
+.hamburger-button:hover .hamburger-line:nth-child(3) {
+  width: 70%;
+  margin-left: 30%;
+}
+
+/* Show hamburger on screens 1000px and below */
+@media screen and (max-width: 1000px) {
+  .hamburger-button {
+    display: flex !important;
+  }
+}
+
+/* Hide hamburger on screens above 1000px */
+@media screen and (min-width: 1001px) {
+  .hamburger-button {
+    display: none !important;
+  }
+}
+
+/* Styles untuk sidebar baru */
+#new-sidebar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background-color: white;
+  z-index: 999999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 0 16px 16px 0;
+}
+
+#new-sidebar.active {
+  transform: translateX(0);
+}
+
+#new-sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* Styles untuk user profile di sidebar */
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  margin: 10px;
+  background-color: #ffeaea;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-bottom: none;
+}
+
+.sidebar-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  margin-right: 12px;
+  border: none;
+  box-shadow: none;
+  object-fit: cover;
+}
+
+.sidebar-username {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+/* Styles untuk nav list di sidebar */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 10px;
+}
+
+.nav-list li {
+  margin-bottom: 15px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-list li a:hover {
+  color: #e74c3c;
+}
+
+.nav-list li a i {
+  margin-right: 12px;
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+  color: #555;
+}
+
+/* Styling untuk item logout */
+#sidebar-logout-link {
+  color: #e74c3c !important;
+}
+
+#sidebar-logout-link i {
+  color: #e74c3c !important;
+}
+
+/* Footer copyright */
+.sidebar-footer {
+  padding: 20px;
+  margin-top: 30px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Menu header */
+.sidebar-header {
+  padding: 20px 20px 0 20px;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Animasi untuk sidebar */
+#new-sidebar {
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#new-sidebar.active {
+  transform: translateX(0);
+}
+
+/* Pastikan body tidak overflow saat sidebar terbuka */
+body.sidebar-open {
+  overflow: hidden !important;
+}
+
+/* Pastikan z-index sidebar lebih tinggi dari elemen lain */
+#new-sidebar {
+  z-index: 999999 !important;
+}
+
+#new-sidebar-overlay {
+  z-index: 999998 !important;
+}
+
+/* Pastikan tombol close sidebar berfungsi dengan baik */
+#close-sidebar {
+  font-size: 24px !important;
+  cursor: pointer !important;
+  background: none !important;
+  border: none !important;
+  padding: 5px !important;
+}
+
+/* Pastikan sidebar tidak tertutup oleh elemen lain */
+#new-sidebar.active {
+  transform: translateX(0) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
